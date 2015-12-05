@@ -7,9 +7,11 @@
 #
 #  Patch relative to: GNU libtool 2.4.2 Debian-2.4.2-1.1
 
---- ../upstream/ltmain.sh.orig  2015-12-01 10:40:40.191404119 -0600
-+++ ../upstream/ltmain.sh 2015-12-01 11:04:06.846679680 -0600
-@@ -3821,6 +3821,16 @@
+--- ../upstream/ltmain.sh.orig	2014-10-18 01:00:39.043067853 +0000
++++ ../upstream/ltmain.sh	2014-10-18 01:00:53.003381339 +0000
+@@ -2510,10 +2510,20 @@
+       s/^Usage:.*--mode=\([^ ]*\) .*/Description of \1 mode:/'
+   fi
    exit $?
  fi
  
@@ -28,7 +30,7 @@
  func_mode_execute ()
  {
      $opt_debug
-@@ -5313,6 +5323,58 @@
+@@ -3951,10 +3961,62 @@
  
  # Core function for launching the target application
  func_exec_program_core ()
@@ -91,7 +93,7 @@
    *-*-mingw | *-*-os2* | *-cegcc*)
      $ECHO "\
        if test -n \"\$lt_option_debug\"; then
-@@ -9503,6 +9565,42 @@
+@@ -8118,10 +8180,47 @@
  	fi
  	if test -z "$dlname"; then
  	  dlname=$soname
@@ -139,7 +141,7 @@
  	for link
  	do
  	  func_append linknames " $link"
-@@ -9962,11 +10060,14 @@
+@@ -8576,15 +8674,18 @@
  	  if test "$realname" != "$linkname"; then
  	    func_show_eval '(cd "$output_objdir" && $RM "$linkname" && $LN_S "$realname" "$linkname")' 'exit $?'
  	  fi
